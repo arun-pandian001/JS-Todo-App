@@ -1,0 +1,256 @@
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <h2 id="title"><a>Books</a>pen</h2>
+
+        <title></title>
+        </head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <body>
+        <div id="ans">  </div>
+        <div id="dates">
+            
+        </div>
+
+            <button id="btn" >+</button>
+        <div id="popup">
+            <input type="text" placeholder="Enter author " id="name">
+            <input type="text" placeholder="Context" id="context">
+            <button id="enter">enter</button>
+            <button id="remove">remove</button>
+        </div>
+        <div id="show"> </div>
+        <script>
+        var arr=[]
+        var times= document.getElementById('dates')
+        var a=  document.getElementById('ans')
+        var nam=  document.getElementById('name')
+        var con=document.getElementById('context')
+        var rem=  document.getElementById('remove')
+        var pop=  document.getElementById('popup')
+        var ent= document.getElementById('enter')
+        var s= document.getElementById('show')
+        var btn=document.getElementById('btn')
+
+        btn.addEventListener('click',()=>
+        {
+            pop.style.display="block"
+        }
+        )
+
+        rem.addEventListener('click',()=>
+        { 
+            pop.style.display="none"
+            document.body.style.backgroundColor=""
+            nam.value=""
+            con.value=""
+        }
+        )
+
+        ent.addEventListener('click',()=>{
+        if(nam.value==""||con.value=="")
+        {alert("INVALID DATA'S")}
+        else{
+        notemake(nam.value,con.value)
+
+        }
+        })
+        function notemake(N,C){
+        
+        pop.style.display="none"
+        var space=document.createElement('div')
+        space.setAttribute("id","container")
+        space.innerHTML=`<h3>${N}</h3> <p>${C}</p>
+        <button class='clr'>clear</button>`
+        a.appendChild(space)
+        arr.push(N,C)
+        console.log(arr)
+        localStorage.setItem("Notes",JSON.stringify(arr))
+        console.log(arr)
+
+        let cl=space.querySelector('.clr')
+        cl.addEventListener('click',()=>{
+        clear(space)
+        arrclear(N)
+        
+        })
+        nam.value=""
+        con.value=""
+        }
+
+        function clear(data){
+        data.remove()
+        }
+        function arrclear(N){
+        var index=arr.indexOf(N)
+        arr.splice(index,2)
+        localStorage.setItem("Notes",JSON.stringify(arr))
+        console.log(arr) 
+        }
+
+        window.onload=()=>{
+
+        arr2 = JSON.parse(localStorage.getItem("Notes"))
+        if(arr2.length>0){
+        //arr2.reduce((N,C)=>{notemake(N,C)})
+        for(i=0;i<arr2.length;i += 2){
+        notemake(arr2[i],arr2[i+1])}}
+        }
+        function showbtn(){
+        btn.style.opacity="1";
+        clearTimeout(timer)
+
+        timer =setTimeout(()=>{
+        btn.style.opacity="0"
+        },2000)
+
+        }
+        let timer;
+        window.addEventListener('touchstart', showbtn)
+
+
+        </script>
+
+        <style>
+        #btn{
+        position:relative;
+        left: 250px;
+        top: 500px;
+        width: 60px;
+        height: 60px;
+        border-radius:50px;
+        padding: 5px;
+        background-color:hotpink;
+        position:fixed;
+        
+        }
+
+        #popup{
+        background: linear-gradient(to top right ,black 50%,darkgrey  );
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display :none;
+        }
+        #name{
+        color: skyblue;
+        position: relative;
+        border:  5px double red;
+        background-color: transparent;
+        top: 260px;
+        font-size:18px;
+        height: 25px;
+        width: 95%;
+        left:2px;
+        }
+        #context{
+        color: deepskyblue;
+        font-size: 20px;
+        background-color: transparent;
+            position: relative;
+        border:  5px double mediumvioletred;
+        top: 280px;
+        height: 48px;
+        width: 95%;
+        left:2px;
+        }
+
+        #name,#context:focus{outline:none;}
+        #remove{
+            position:relative;
+        top: 300px;
+        left: 150px;
+        color: whitesmoke;
+        padding: 12px;
+        border-radius: 10%;
+        background-color: red;
+        border: none;
+        }
+        #enter{
+        color: white;
+        width: 80px;
+        position:relative;
+        left: 10px;
+        padding: 12px;
+        border: none;
+        background-color: green;
+        border-radius: 10%;
+        top: 300px;
+        }
+        #container{
+        
+        margin-top: 14px;
+        background-color: black;
+        color: white;
+        width: auto;
+        height: auto;
+        border-radius:16px;
+        display: inline-block;
+        padding: 10px;
+        transition: 1s;
+        }
+        #container:hover{
+        transform: scale(0.95);
+        transition: 0.2s;
+        
+        }
+        h3{color:red;
+        margin-left: px;
+        font-size: 25px;
+        }
+        p{margin: 10px;
+        color: white;
+        font-size: 17px;
+        }
+        button{
+        background-color:red;
+        border-radius: 15% ;
+        padding: 5px;
+        border: none;
+        margin-left: 5px;
+        margin-bottom: 8px;
+        }
+        #title{
+        color:white;
+        background: linear-gradient(to left,purple,black);
+        padding:10px;
+        }
+
+        #ans{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 3px;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+        a{color: red;
+        font-size: 25px;
+        }
+        *{
+        margin: 0px;
+        }
+        body{
+        background: linear-gradient(to 
+        top left, black,darkblue)
+        ;
+        background-size: cover;
+        height: 100vh;
+        }
+
+        *{
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        </style>
+        </body>
+        </html>
