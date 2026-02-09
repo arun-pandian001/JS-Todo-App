@@ -1,0 +1,47 @@
+ div{
+        background-color:lightgreen;
+        }
+        #inp{ 
+            border-top: 2px solid blue;
+            border-bottom: 2px solid red;
+            border-left: 3px solid purple;
+            border-right: 3px solid orange;
+            height: 50px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        #btn{
+           
+           background-color: turquoise;
+            height: 50px;
+            border-radius: 5px;
+              letter-spacing: 2px;
+             font-weight: bold;
+            width: 100px;
+            border: none;
+        }
+        #dell{
+              border: 2px solid black;
+              border: none;
+              background-color: purple;
+              letter-spacing: 2px;
+              font-weight: bold;
+            height: 50px;
+            border-radius: 5px;
+            width: 100px;
+        }
+        #l{ background-color: darkslategray;
+            width: 500px;
+          border-radius: 10px;
+            margin-left: 450px;
+            margin-top: 50px;
+        }
+       
+  ::placeholder{
+ letter-spacing: 1.5px;
+ color:grey;
+ font-weight: bold;
+  }   
+        body{
+            background-color: gray;
+        }
