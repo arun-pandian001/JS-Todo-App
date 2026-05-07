@@ -1,4 +1,27 @@
- div{
+
+/* Mobile Responsive */
+@media (max-width: 768px){
+
+    #inp{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    #btn,
+    #dell{
+        width: 45%;
+        margin-top: 10px;
+    }
+
+    #l{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+}
+
+div{
         background-color:lightgreen;
         }
         #inp{ 
@@ -33,8 +56,8 @@
         #l{ background-color: darkslategray;
             width: 500px;
           border-radius: 10px;
-            margin-left: 450px;
-            margin-top: 50px;
+           margin:50px auto;
+           max-width:100%
         }
        
   ::placeholder{
