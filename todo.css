@@ -1,6 +1,6 @@
 
 /* Mobile Responsive */
-@media (max-width: 768px){
+@media (max-width: 600px){
 
     #inp{
         width: 40%;
@@ -30,8 +30,9 @@ div{
             border-left: 3px solid purple;
             border-right: 3px solid orange;
             height: 50px;
-            width: 200px;
+            width: 700px;
             border-radius: 7px;
+            margin-left: 40px;
         }
         #btn{
            
