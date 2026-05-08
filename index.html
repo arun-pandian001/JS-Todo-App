@@ -1,19 +1,26 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo</title>
     <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="input-group">
+            <input placeholder="Add your work's here 🤖" id="inp">
+            <div class="btn-group">
+                <button id="btn">Add</button>
+                <button id="dell">Delete All</button>
+            </div>
+        </div>
+        
+        <table id="l"></table>
+        <div id="bt"></div>
+    </div>
 
-    <body>
-    <input  placeholder="Add your work's here 🤖"  name="" id="inp">
-    <button id="btn">Add</button>
-    <button id="dell">Delete all</button>
-    
-  <Table   id ="l" border="0" ></Table>
-  <div id="bt"></div>
-   
-<script src="todo.js"></script>
-    </html>
+    <script src="todo.js"></script>
+</body>
+</html>

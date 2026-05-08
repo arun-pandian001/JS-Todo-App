@@ -1,71 +1,133 @@
-
-/* Mobile Responsive */
-@media (max-width: 600px){
-
-    #inp{
-        width: 200px;
-        margin-bottom: 8px;
-    }
-
-    #btn,
-    #dell{
-        width: 100px;
-        margin-top: 10px;
-    }
-
-    #l{
-        width: 100%;
-        margin-left: 0;
-        margin-top: 30px;
-    }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-div{
-        background-color:lightgreen;
-        }
-        #inp{ 
-            border-top: 2px solid blue;
-            border-bottom: 2px solid red;
-            border-left: 3px solid purple;
-            border-right: 3px solid orange;
-            height: 50px;
-            width: 700px;
-            border-radius: 7px;
-            margin-left: 40px;
-        }
-        #btn{
-           
-           background-color: turquoise;
-            height: 40px;
-            border-radius: 10px;
-              letter-spacing: 2px;
-             font-weight: bold;
-            width: 100px;
-            border: none;
-        }
-        #dell{
-              border: 2px solid black;
-              border: none;
-              background-color: purple;
-              letter-spacing: 2px;
-              font-weight: bold;
-            height: 40px;
-            border-radius: 10px;
-            width: 100px;
-        }
-        #l{ background-color: darkslategray;
-            width: 500px;
-          border-radius: 10px;
-           margin:50px auto;
-           max-width:100%
-        }
-       
-  ::placeholder{
- letter-spacing: 1.5px;
- color:grey;
- font-weight: bold;
-  }   
-        body{
-            background-color: gray;
-        }
+body {
+    background: linear-gradient(135deg, #1e1e2f, #4e4e6a);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Input Styles */
+.input-group {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+#inp {
+    width: 100%;
+    height: 55px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 0 20px;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#inp:focus {
+    border-color: turquoise;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::placeholder { color: rgba(255, 255, 255, 0.5); letter-spacing: 1px; }
+
+/* Button Styles */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+#btn, #dell {
+    flex: 1;
+    max-width: 150px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+#btn { background: turquoise; color: #1e1e2f; }
+#btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(64, 224, 208, 0.4); }
+
+#dell { background: #800080; }
+#dell:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(128, 0, 128, 0.4); }
+
+/* Table / Task List Styles */
+#l {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px; /* Rows naduvula gap */
+}
+
+tr {
+    background: rgba(255, 255, 255, 0.08);
+    transition: 0.3s;
+}
+
+tr:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+td {
+    padding: 15px;
+    color: white;
+}
+
+td:first-child {
+    border-radius: 12px 0 0 12px;
+    text-align: left !important;
+    padding-left: 25px;
+}
+
+td:last-child {
+    border-radius: 0 12px 12px 0;
+    text-align: right;
+}
+
+/* Delete Button in Row */
+.del-row-btn {
+    background: #ff4d4d !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    border: none !important;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.del-row-btn:hover { background: #ff1a1a !important; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .input-group { padding: 20px; }
+    .btn-group { flex-direction: row; }
+    #inp { height: 50px; }
+    td { font-size: 16px !important; }
+}
