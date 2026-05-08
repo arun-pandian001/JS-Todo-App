@@ -3,13 +3,13 @@
 @media (max-width: 768px){
 
     #inp{
-        width: 70%;
+        width: 40%;
         margin-bottom: 8px;
     }
 
     #btn,
     #dell{
-        width: 40%;
+        width: 30%;
         margin-top: 10px;
     }
 
