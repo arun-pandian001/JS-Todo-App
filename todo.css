@@ -3,13 +3,13 @@
 @media (max-width: 768px){
 
     #inp{
-        width: 90%;
-        margin-bottom: 10px;
+        width: 70%;
+        margin-bottom: 8px;
     }
 
     #btn,
     #dell{
-        width: 45%;
+        width: 40%;
         margin-top: 10px;
     }
 
@@ -31,13 +31,13 @@ div{
             border-right: 3px solid orange;
             height: 50px;
             width: 200px;
-            border-radius: 5px;
+            border-radius: 7px;
         }
         #btn{
            
            background-color: turquoise;
-            height: 50px;
-            border-radius: 5px;
+            height: 40px;
+            border-radius: 10px;
               letter-spacing: 2px;
              font-weight: bold;
             width: 100px;
@@ -49,8 +49,8 @@ div{
               background-color: purple;
               letter-spacing: 2px;
               font-weight: bold;
-            height: 50px;
-            border-radius: 5px;
+            height: 40px;
+            border-radius: 10px;
             width: 100px;
         }
         #l{ background-color: darkslategray;
