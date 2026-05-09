@@ -2,7 +2,7 @@
 A clean and functional Todo app built to demonstrate Vanilla JavaScript logic and interactive UI.
 
 ## 🚀 Live Demo
-you can check out live version of this project here:[Todo-App live link](https://js-notes-app-wine.vercel.app/)
+you can check out live version of this project here:[Todo-App live link](https://js-todo-app-pearl.vercel.app/)
 ---
 
 ### 🛠 Tech Stack
