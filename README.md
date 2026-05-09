@@ -1,6 +1,10 @@
 # 📝 JavaScript Todo Application
 A clean and functional Todo app built to demonstrate Vanilla JavaScript logic and interactive UI.
 
+## 🚀 Live Demo
+you can check out live version of this project here:[Todo-App live link](https://js-notes-app-wine.vercel.app/)
+---
+
 ### 🛠 Tech Stack
 - HTML5: Semantic structure.
 - CSS3: Custom styling and layout.
